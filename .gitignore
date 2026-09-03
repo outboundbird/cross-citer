@@ -1,0 +1,7 @@
+node_modules/
+main.js
+data.json
+main_styles/
+styles/
+*.log
+.DS_Store

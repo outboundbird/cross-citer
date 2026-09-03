@@ -1,0 +1,52 @@
+.cross-citer-modal {
+  width: min(1100px, 94vw);
+  max-width: 94vw;
+}
+
+.cross-citer-body {
+  display: flex;
+  gap: 12px;
+  align-items: stretch;
+  max-height: 60vh;
+}
+
+.cross-citer-body > .prompt-results {
+  flex: 1 1 45%;
+  min-width: 0;
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+.cross-citer-preview {
+  flex: 1 1 55%;
+  min-width: 0;
+  border-left: 1px solid var(--background-modifier-border);
+  padding: 8px 12px;
+  overflow-y: auto;
+  max-height: 60vh;
+  font-size: 0.9em;
+}
+
+.cross-citer-preview-header {
+  margin-bottom: 8px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+
+.cross-citer-preview-title {
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.cross-citer-preview-body {
+  line-height: 1.4;
+}
+
+.cross-citer-title {
+  font-weight: 500;
+}
+
+.cross-citer-meta {
+  color: var(--text-muted);
+  display: block;
+}

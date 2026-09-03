@@ -1,0 +1,9 @@
+{
+  "id": "cross-citer",
+  "name": "CrossCiter",
+  "version": "0.1.0",
+  "minAppVersion": "1.5.0",
+  "description": "Search reference notes in another vault and insert citations as footnotes.",
+  "author": "Siying Huang",
+  "isDesktopOnly": true
+}

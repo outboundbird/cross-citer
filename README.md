@@ -16,17 +16,22 @@ Citations are formatted from the BibTeX block embedded in each reference note, s
 - **Reformat all citations** in the current note when you switch styles.
 - **Export bibliography**: scan the current note, collect every cited reference, sort alphabetically, and produce a `## Bibliography` section. Idempotent — rerunning replaces the existing section.
 
-## Setup
+## Install (end users)
 
-1. Clone this repo somewhere on disk (call this **source directory**).
-2. `npm install` then `npm run build` — produces `main.js`.
-3. Copy `main.js`, `manifest.json`, and `styles.css` into `<W>/.obsidian/plugins/cross-citer/`.
-4. In Obsidian's writing vault W: Settings → Community plugins → enable **CrossCiter**.
-5. In CrossCiter settings:
-   - **Reference vault path** — absolute path to R's root folder.
-   - **Reference vault name** — R's Obsidian vault name (used for `obsidian://open` back-links).
-   - **Extra CSL styles folder** *(optional)* — folder of `.csl` files to load in addition to the built-in styles.
-6. Click **Refresh index now** (or run the command). On the first run, the plugin writes a `citekey:` field into every reference note's frontmatter to lock keys in place.
+1. Go to the [Releases page](../../releases) and download `main.js`, `manifest.json`, and `styles.css` from the latest release.
+2. In your writing vault **W**, create the folder `<W>/.obsidian/plugins/cross-citer/` and drop those three files in.
+3. Obsidian → Settings → Community plugins → **Reload** → enable **CrossCiter**.
+4. Or, if you use [BRAT](https://github.com/TfTHacker/obsidian42-brat): add this repo URL as a beta plugin and it auto-installs and updates.
+
+## Configure
+
+Open Obsidian settings → CrossCiter and set:
+
+- **Reference vault path** — absolute path to R's root folder.
+- **Reference vault name** — R's Obsidian vault name (used for `obsidian://open` back-links).
+- **Extra CSL styles folder** *(optional)* — folder of `.csl` files to load in addition to the built-in styles.
+
+Then click **Refresh index now** (or run the command). On the first run, the plugin writes a `citekey:` field into every reference note's frontmatter to lock keys in place.
 
 ## Reference note format
 
@@ -73,7 +78,7 @@ Accessible via the command palette (Ctrl/Cmd + P) or the ribbon icon:
 | **Reload extra CSL styles** | Rescans the CSL folder without a full restart. |
 | **Log reference index to console (debug)** | Prints the in-memory index for troubleshooting. |
 
-## Build
+## Build from source (developers)
 
 ```
 npm install
@@ -81,6 +86,15 @@ npm run build
 ```
 
 `main.js` is bundled with esbuild. Copy the three runtime files (`main.js`, `manifest.json`, `styles.css`) into `<W>/.obsidian/plugins/cross-citer/` after each build.
+
+## Publishing a release
+
+```
+git tag v0.1.0
+git push origin v0.1.0
+```
+
+Then on GitHub → Releases → *Draft a new release* → choose the tag → attach `main.js`, `manifest.json`, and `styles.css` → publish. Bump `version` in `manifest.json` and `package.json` beforehand.
 
 ## Notes
 

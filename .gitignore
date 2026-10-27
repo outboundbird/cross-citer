@@ -5,3 +5,7 @@ main_styles/
 styles/
 *.log
 .DS_Store
+
+# VS Code workspace
+.vscode/
+*.code-workspace
